@@ -59,6 +59,7 @@ namespace BookHotel.WebMVC
                 RequireDigit = true,
                 RequireLowercase = true,
                 RequireUppercase = true,
+                //RequireSpecialCharacter 
             };
 
             // Configure user lockout defaults
