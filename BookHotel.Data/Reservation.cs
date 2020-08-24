@@ -19,7 +19,7 @@ namespace BookHotel.Data
         public string UserID { get; set; } //user booking rooms
         public DateTime ArrivialDate { get; set; }
         public int NumberOfNights { get; set; }
-        public int NumberOfRooms { get; set; } //set to enum ***FK***
+        public int NumberOfRooms { get; set; } //set to enum? => ***FK***
 
     }
 }
