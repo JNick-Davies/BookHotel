@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookHotel.Data\BookHotel.Data.csproj">
+      <Project>{e9dec9eb-c92f-4ed4-8852-a596910ce3dd}</Project>
+      <Name>BookHotel.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookHotel.Models\BookHotel.Models.csproj">
+      <Project>{4d10c26c-2964-4175-b5c6-15385c16040d}</Project>
+      <Name>BookHotel.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
