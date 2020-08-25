@@ -1,4 +1,6 @@
 ﻿using BookHotel.Models;
+using BookHotel.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +15,28 @@ namespace BookHotel.WebMVC.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var model = new ReservationListItem[0];
-            return View(model);
-        }
+            var userId = int.Parse(User.Identity.GetUserId());
+            var service = new ReservationService(userId);
+            var model = service.GetReservations();
 
-        public ActionResult Create()
-        {
-            return View();
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ReservationCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var userId = int.Parse(User.Identity.GetUserId());
+            var service = new ReservationService(userId);
+
+            service.CreateReservation(model);
+
+            return RedirectToAction("Index");
         }
 
     }

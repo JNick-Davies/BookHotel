@@ -10,7 +10,8 @@ namespace BookHotel.Models
     public class ReservationListItem
     {
         //[Display(Name = "Confirmation number")]
-        public Guid ReservationId { get; set; } //do we need this??!?
+        
+        public int ReservationId { get; set; } //do we need this??!?
         [Display(Name = "Confirmation number")]
         public int ConfirmationNumber { get; set; } 
         public string InnCode { get; set; }

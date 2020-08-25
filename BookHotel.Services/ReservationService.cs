@@ -11,9 +11,9 @@ namespace BookHotel.Services
 {
     public class ReservationService
     {
-        private readonly string _userId;
+        private readonly int _userId;
 
-        public ReservationService(string userId)
+        public ReservationService(int userId)
         {
             _userId = userId;
         }
@@ -23,13 +23,13 @@ namespace BookHotel.Services
             var entity =
                 new Reservation()
                 {
-                    UserID = _userId,
+                    GuestId = _userId,
                     ReservationId = model.ReservationId,
                     ConfirmationNumber = model.ConfirmationNumber,
                     InnCode = model.InnCode,
                     Rate = model.Rate,
                     //UserID = model.UserID, //_user!~!
-                    ArrivialDate = model.ArrivialDate,
+                    ArrivialDate = model.ArrivalDate,
                     NumberOfNights = model.NumberOfNights,
                     NumberOfRooms = model.NumberOfRooms,
                     //Title = model.Title,
@@ -51,7 +51,7 @@ namespace BookHotel.Services
                 var query =
                     ctx
                         .Reservations
-                        .Where(e => e.UserID == _userId)
+                        .Where(e => e.GuestId == _userId)
                         .Select(
                             e =>
                                 new ReservationListItem

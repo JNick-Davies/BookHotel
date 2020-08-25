@@ -10,7 +10,7 @@ namespace BookHotel.Models
     public class ReservationCreate
     {
         [Key]
-        public Guid ReservationId { get; set; }
+        public int ReservationId { get; set; }
 
         [Required]
         [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]
@@ -27,13 +27,12 @@ namespace BookHotel.Models
         [Range(99, 1999, ErrorMessage = "Currently we only offer rooms between $99 and $1,999")]
         public decimal Rate { get; set; } //range and min max length 
 
-        [Required]
-        public string UserID { get; set; } //user booking rooms
+        //public Guid BookingUserId { get; set; } //user booking rooms
 
         [Required]
         [DataType(DataType.DateTime)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
-        public DateTime ArrivialDate { get; set; }
+        public DateTime ArrivalDate { get; set; }
 
         [Required]
         [Range(0,13, ErrorMessage = "For stays 14 nights or longer please contact the hotel sale's team directly for a long term stay rate.")]

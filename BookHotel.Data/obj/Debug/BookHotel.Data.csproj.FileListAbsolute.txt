@@ -14,3 +14,8 @@ C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.csproj.CopyComplete
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.dll
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.pdb
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.InitialCreate.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.csproj.GenerateResource.cache
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.ChangingUseId.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.ChangingUserClass.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.ChangingUserClass1.resources
