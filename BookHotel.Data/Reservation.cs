@@ -20,7 +20,10 @@ namespace BookHotel.Data
         public DateTime ArrivialDate { get; set; }
         public int NumberOfNights { get; set; }
         public int NumberOfRooms { get; set; } //set to enum? => ***FK***
-        public int GuestId { get; set; } //FK to user class 
+        public int StaffLoginId { get; set; } //FK to ApplicationUser =>Staff class 
+        public string GuestFirstName { get; set; }
+        public string GuestlastName { get; set; }
+        public string GuestEmail { get; set; }
 
     }
 }

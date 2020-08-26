@@ -7,13 +7,13 @@ namespace BookHotel.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class ChangingUseId : IMigrationMetadata
+    public sealed partial class InitMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangingUseId));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008251330209_ChangingUseId"; }
+            get { return "202008260016570_InitMigration"; }
         }
         
         string IMigrationMetadata.Source

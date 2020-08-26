@@ -23,7 +23,7 @@ namespace BookHotel.Services
             var entity =
                 new Reservation()
                 {
-                    GuestId = _userId,
+                    StaffLoginId = _userId,
                     ReservationId = model.ReservationId,
                     ConfirmationNumber = model.ConfirmationNumber,
                     InnCode = model.InnCode,
@@ -51,7 +51,7 @@ namespace BookHotel.Services
                 var query =
                     ctx
                         .Reservations
-                        .Where(e => e.GuestId == _userId)
+                        .Where(e => e.StaffLoginId == _userId)
                         .Select(
                             e =>
                                 new ReservationListItem

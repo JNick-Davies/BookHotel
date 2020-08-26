@@ -12,6 +12,8 @@ namespace BookHotel.Models
         [Key]
         public int ReservationId { get; set; }
 
+        public int StaffLoginId { get; set; }
+
         [Required]
         [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
@@ -41,5 +43,14 @@ namespace BookHotel.Models
         [Required]
         [Range(0, 9, ErrorMessage = "For reservations of 10 rooms or more please contact the hotel sale's team directly for a group room block.")]
         public int NumberOfRooms { get; set; } //set to enum? => ***FK***
+
+        [Required]
+        public string GuestFirstName { get; set; }
+
+        [Required]
+        public string GuestlastName { get; set; }
+
+        [Required]
+        public string GuestEmail { get; set; }
     }
 }

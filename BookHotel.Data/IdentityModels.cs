@@ -34,6 +34,12 @@ namespace BookHotel.Data
 
         public DbSet<Reservation> Reservations { get; set; }
 
+        public DbSet<InnCode> Inncodes { get; set; }
+
+        public DbSet<RoomNumber> RoomNumbers { get; set; }
+
+        public DbSet<ApplicationLoginUser> ApplicationLoginUsers { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

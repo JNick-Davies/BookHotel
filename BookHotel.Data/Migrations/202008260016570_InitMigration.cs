@@ -3,7 +3,7 @@ namespace BookHotel.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class InitMigration : DbMigration
     {
         public override void Up()
         {
@@ -11,14 +11,17 @@ namespace BookHotel.Data.Migrations
                 "dbo.Reservation",
                 c => new
                     {
-                        ReservationId = c.Guid(nullable: false),
+                        ReservationId = c.Int(nullable: false, identity: true),
                         ConfirmationNumber = c.Int(nullable: false),
                         InnCode = c.String(),
                         Rate = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        UserID = c.String(),
                         ArrivialDate = c.DateTime(nullable: false),
                         NumberOfNights = c.Int(nullable: false),
                         NumberOfRooms = c.Int(nullable: false),
+                        StaffLoginId = c.Int(nullable: false),
+                        GuestFirstName = c.String(),
+                        GuestlastName = c.String(),
+                        GuestEmail = c.String(),
                     })
                 .PrimaryKey(t => t.ReservationId);
             

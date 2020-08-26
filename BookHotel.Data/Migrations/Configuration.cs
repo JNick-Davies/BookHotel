@@ -10,7 +10,6 @@ namespace BookHotel.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "BookHotel.Data.ApplicationDbContext";
         }
 
         protected override void Seed(BookHotel.Data.ApplicationDbContext context)
