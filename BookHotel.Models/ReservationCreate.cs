@@ -11,8 +11,8 @@ namespace BookHotel.Models
     {
         [Key]
         public int ReservationId { get; set; }
-
-        public int StaffLoginId { get; set; }
+        [Required]
+        public Guid StaffIdLogin { get; set; }
 
         [Required]
         [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]

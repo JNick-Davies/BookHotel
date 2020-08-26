@@ -15,8 +15,8 @@ namespace BookHotel.WebMVC.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var userId = int.Parse(User.Identity.GetUserId());
-            var service = new ReservationService(userId);
+            var StaffIdLogin = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReservationService(StaffIdLogin);
             var model = service.GetReservations();
 
             return View(model);
@@ -26,17 +26,26 @@ namespace BookHotel.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ReservationCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateReservationService();
+
+            if (service.CreateReservation(model))
             {
-                return View(model);
-            }
+                TempData["SaveResult"] = "Your note was created.";
+                return RedirectToAction("Index");
+            };
 
-            var userId = int.Parse(User.Identity.GetUserId());
-            var service = new ReservationService(userId);
+            ModelState.AddModelError("", "Note could not be created.");
 
-            service.CreateReservation(model);
+            return View(model);
+        }
 
-            return RedirectToAction("Index");
+        private ReservationService CreateReservationService()
+        {
+            var StaffIdLogin = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReservationService(StaffIdLogin);
+            return service;
         }
 
     }
