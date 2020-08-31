@@ -32,11 +32,11 @@ namespace BookHotel.WebMVC.Controllers
 
             if (service.CreateReservation(model))
             {
-                TempData["SaveResult"] = "Your note was created.";
+                TempData["SaveResult"] = "Your reservation was created.";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Note could not be created.");
+            ModelState.AddModelError("", "Your reservation is unable to be completed");
 
             return View(model);
         }
