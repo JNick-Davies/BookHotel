@@ -69,5 +69,36 @@ namespace BookHotel.Services
                 return query.ToArray();
             }
         }
+
+        public bool UpdateReservation (ReservationEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Reservations
+                        .Single(e => e.ReservationId == model.ReservationId && e.StaffIdLogin == _userId);
+                entity.Rate = model.Rate;
+                entity.ArrivialDate = model.ArrivialDate;
+                entity.NumberOfNights = model.NumberOfNights;
+                entity.NumberOfRooms = model.NumberOfRooms;
+                entity.GuestFirstName = model.GuestFirstName;
+                entity.GuestlastName = model.GuestlastName;
+                entity.GuestEmail = model.GuestEmail;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteReservation(int ReservationId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                        ctx
+                            .Reservations
+                            .Single(e => e.ReservationId == ReservationId && e.StaffIdLogin == _userId);
+                ctx.Reservations.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -54,17 +54,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationLoginUser.cs\ApplicationLoginUserCreate.cs" />
+    <Compile Include="ApplicationLoginUser.cs\ApplicationLoginUserDetail.cs" />
+    <Compile Include="ApplicationLoginUser.cs\ApplicationLoginUserEdit.cs" />
     <Compile Include="InnCode\InnCodeCreate.cs" />
+    <Compile Include="InnCode\InnCodeDelete.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationCreate.cs" />
+    <Compile Include="ReservationDetail.cs" />
+    <Compile Include="ReservationEdit.cs" />
     <Compile Include="ReservationListItem.cs" />
+    <Compile Include="RoomNumber\RoomNumberCreate.cs" />
+    <Compile Include="RoomNumber\RoomNumberDetail.cs" />
+    <Compile Include="RoomNumber\RoomNumberEdit.cs" />
+    <Compile Include="RoomNumber\RoomNumberList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reservation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
