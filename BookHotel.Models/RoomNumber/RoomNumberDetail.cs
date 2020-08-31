@@ -8,5 +8,11 @@ namespace BookHotel.Models.RoomNumber
 {
     public class RoomNumberDetail
     {
+        public int roomId { get; set; }
+        public bool King { get; set; }
+        public bool Queen { get; set; }
+        public bool IsCityView { get; set; }
+        public bool IsRiverView { get; set; }
+        public bool IsSuite { get; set; }
     }
 }

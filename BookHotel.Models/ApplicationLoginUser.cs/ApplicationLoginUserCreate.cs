@@ -8,5 +8,8 @@ namespace BookHotel.Models.ApplicationLoginUser.cs
 {
     public class ApplicationLoginUserCreate
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string UserHotelInnCode { get; set; }
     }
 }
