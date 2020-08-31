@@ -24,11 +24,11 @@ namespace BookHotel.Services
                 {
                     HotelInnCode = model.HotelInnCode,
                     HotelName = model.HotelName,
-                    HotelAddress = model.HotelAddress, 
+                    HotelAddress = model.HotelAddress,
                     HotelPhoneNumber = model.HotelPhoneNumber,
                     NumberOfStars = model.NumberOfStars,
-                    HasGolfCourse = model.HasGolfCourse, 
-                    HasRooftopBar = model.HasRooftopBar, 
+                    HasGolfCourse = model.HasGolfCourse,
+                    HasRooftopBar = model.HasRooftopBar,
                     HasSpa = model.HasSpa,
                 };
             using (var ctx = new ApplicationDbContext())
@@ -62,51 +62,38 @@ namespace BookHotel.Services
             }
         }
 
-        public CrimeDetail GetCrimeByCrimeId(int id)
+        /*public bool EditInnCode(InnCodeEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Crimes
-                        .Single(e => e.CrimeId == id);
-                return new CrimeDetail()
-                {
-                    CrimeId = entity.CrimeId,
-                    CrimeDescription = entity.CrimeDescription,
-                    CrimeType = entity.CrimeType,
-                    Penalty = entity.Penalty
-                };
-
-            }
-        }
-        public bool EditCrime(CrimeEdit model)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                        .Crimes
-                        .Single(e => e.CrimeId == model.CrimeId);
-                entity.CrimeDescription = model.CrimeDescription;
-                entity.CrimeType = model.CrimeType;
-                entity.Penalty = model.Penalty;
+                        .Inncodes
+                        .Single(e => e.HotelInnCode == model.InnCode);
+                entity.HotelInnCode =model.HotelInnCode;
+                entity.HotelName = model.HotelName;
+                entity.HotelAddress = model.HotelAddress;
+                entity.HotelPhoneNumber = model.HotelPhoneNumber;
+                entity.NumberOfStars = model.NumberOfStars;
+                entity.HasGolfCourse = model.HasGolfCourse;
+                entity.HasRooftopBar = model.HasRooftopBar;
+                entity.HasSpa = model.HasSpa;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteCrime(int id)
+        public bool DeleteInnCode(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Crimes
-                        .Single(e => e.CrimeId == id);
-                ctx.Crimes.Remove(entity);
+                        .Inncodes
+                        .Single(e => e.HotelInnCode == id);
+                ctx..Inncodes.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
-        }
+        }*/
     }
 }
