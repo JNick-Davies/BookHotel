@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace BookHotel.Data
         [Key]
         [Required]
         public string HotelInnCode { get; set; }
+        [ForeignKey(nameof(HotelInnCode))]
+        public virtual Reservation Reservation { get; set; }
 
         [Required]
         public string HotelName { get; set; }

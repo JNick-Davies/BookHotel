@@ -58,6 +58,7 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="InnCode.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NumOfRoomsToRoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="RoomNumber.cs" />

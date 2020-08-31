@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace BookHotel.Data
 {
-    public class ApplicationLoginUser
+    public class NumOfRoomsToRoomType
     {
+        //joining table for Reservation to roomNumber
         [Key]
-        public Guid StaffIdLogin { get; set; }
-        [ForeignKey(nameof(StaffIdLogin))]
+        public int NumOfRoomsID { get; set; }
+        [ForeignKey(nameof(NumOfRoomsID))]
         public virtual Reservation Reservation { get; set; }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string UserHotelInnCode { get; set; }
-
+        [Key]
+        public int roomNumber { get; set; }
+        //[ForeignKey(nameof(roomNumber))]
     }
 }
