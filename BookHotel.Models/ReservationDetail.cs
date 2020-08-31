@@ -22,7 +22,7 @@ namespace BookHotel.Models
      
         [MinLength(5, ErrorMessage = "Inn Codes are at least 5 characters long.")]
         [MaxLength(6, ErrorMessage = "Inn Codes cannot exceed 6 characters.")]
-        public string InnCode { get; set; }//***FK***
+        public string InnCode { get; set; }
 
      
         [DisplayFormat(DataFormatString = "{0:C}")] //set currency $$ 
