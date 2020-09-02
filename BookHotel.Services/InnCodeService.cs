@@ -1,4 +1,5 @@
 ﻿using BookHotel.Data;
+using BookHotel.Models;
 using BookHotel.Models.InnCode;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace BookHotel.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<InnCode> GetInnCodes()
+        public IEnumerable<InnCodeList> GetInnCodes()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -54,9 +55,8 @@ namespace BookHotel.Services
                                 NumberOfStars = e.NumberOfStars,
                                 HasGolfCourse = e.HasGolfCourse,
                                 HasRooftopBar = e.HasRooftopBar,
-                                HasSpa = e.HasSpa,
+                                HasSpa = e.HasSpa
                             }
-
                         );
                 return query.ToArray();
             }

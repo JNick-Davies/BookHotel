@@ -1,5 +1,3 @@
-C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.csprojAssemblyReference.cache
-C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.csproj.CoreCompileInputs.cache
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin\Debug\BookHotel.Data.dll.config
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin\Debug\BookHotel.Data.dll
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin\Debug\BookHotel.Data.pdb
@@ -11,6 +9,7 @@ C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.csproj.CoreCompileInputs.cache
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.csproj.CopyComplete
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.dll
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.pdb

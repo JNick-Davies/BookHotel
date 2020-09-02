@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookHotel.Models.InnCode
+namespace BookHotel.Models
 {
-    public class InnCodeList : InnCode 
+    public class InnCodeList 
     {
         [Key]
         [Required]
