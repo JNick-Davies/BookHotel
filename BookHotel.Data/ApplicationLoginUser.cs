@@ -12,8 +12,11 @@ namespace BookHotel.Data
     {
         [Key]
         public Guid StaffIdLogin { get; set; }
+        [Display(Name ="First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        [Display(Name = "User's Home Inn Code")]
         public string UserHotelInnCode { get; set; }
 
     }
