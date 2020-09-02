@@ -12,9 +12,6 @@ namespace BookHotel.Data
     {
         [Key]
         public Guid StaffIdLogin { get; set; }
-        [ForeignKey(nameof(StaffIdLogin))]
-        public virtual Reservation Reservation { get; set; }
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserHotelInnCode { get; set; }

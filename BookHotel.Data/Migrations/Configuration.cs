@@ -31,10 +31,10 @@
                 new InnCode { HotelInnCode = "INDFQ", HotelName = "Fishers' Quarters", HotelAddress = "871 116th Street", HotelPhoneNumber = 317 - 555 - 0782, HasSpa = true, HasGolfCourse = false, HasRooftopBar = true, NumberOfStars = 4 }
                         );
 
-            context.Reservations.AddOrUpdate(x => x.ReservationId,
+            /*context.Reservations.AddOrUpdate(x => x.ReservationId,
                 new Reservation { ConfirmationNumber = 12345678, InnCode = "INDMS", Rate = 149.99m, ArrivialDate = new DateTime(2020, 10, 02), NumberOfNights = 2, NumberOfRooms = 1, GuestFirstName = "Ryan", GuestlastName = "Sanchez"},
                 new Reservation { ConfirmationNumber = 12345679, InnCode = "INDFQ", Rate = 179.99m, ArrivialDate = new DateTime(2020, 10,09), NumberOfNights = 2, NumberOfRooms = 2, GuestFirstName = "Andrea", GuestlastName = "McKenzie" }
-            );
+            );*/
         }
     }
 }

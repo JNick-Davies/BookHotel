@@ -14,9 +14,7 @@ namespace BookHotel.Data
         [Key]
         [Required]
         public string HotelInnCode { get; set; }
-        [ForeignKey(nameof(HotelInnCode))]
-        public virtual Reservation Reservation { get; set; }
-
+        
         [Required]
         public string HotelName { get; set; }
 
@@ -34,7 +32,7 @@ namespace BookHotel.Data
 
         [DefaultValue(false)]
         public bool HasRooftopBar { get; set; }
-        
+
         public int NumberOfStars { get; set; }
     }
 }
