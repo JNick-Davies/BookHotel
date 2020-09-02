@@ -11,13 +11,16 @@ namespace BookHotel.Data
     public class NumOfRoomsToRoomType
     {
         //joining table for Reservation to roomNumber
-        
+        [Key]
         public int NumOfRoomsID { get; set; }
-        [ForeignKey(nameof(NumOfRoomsID))]
+        [ForeignKey(nameof(Reservation))]
+        public int ReservationId { get; set; }
         public virtual Reservation Reservation { get; set; }
 
-        [Key]
-        public int roomNumber { get; set; }
-        //[ForeignKey(nameof(roomNumber))]
+
+        [ForeignKey(nameof(RoomNumber))]
+        public int roomId { get; set; }
+        public virtual RoomNumber RoomNumber { get; set; }
+
     }
 }
