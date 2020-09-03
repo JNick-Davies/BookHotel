@@ -178,7 +178,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ApplicationLoginUsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InnCodesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -251,6 +250,17 @@
     <Content Include="Views\Reservation\Index.cshtml" />
     <Content Include="Views\Reservation\Create.cshtml" />
     <Content Include="Views\Reservation\Delete.cshtml" />
+    <Content Include="Views\Reservation\Edit.cshtml" />
+    <Content Include="Views\RoomNumbers\Create.cshtml" />
+    <Content Include="Views\RoomNumbers\Delete.cshtml" />
+    <Content Include="Views\RoomNumbers\Details.cshtml" />
+    <Content Include="Views\RoomNumbers\Edit.cshtml" />
+    <Content Include="Views\RoomNumbers\Index.cshtml" />
+    <Content Include="Views\InnCodes\Create.cshtml" />
+    <Content Include="Views\InnCodes\Delete.cshtml" />
+    <Content Include="Views\InnCodes\Details.cshtml" />
+    <Content Include="Views\InnCodes\Edit.cshtml" />
+    <Content Include="Views\InnCodes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

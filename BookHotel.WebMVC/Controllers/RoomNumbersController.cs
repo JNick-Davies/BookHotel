@@ -2,104 +2,118 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Description;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
 using BookHotel.Data;
 
 namespace BookHotel.WebMVC.Controllers
 {
-    public class RoomNumbersController : ApiController
+    public class RoomNumbersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/RoomNumbers
-        public IQueryable<RoomNumber> GetRoomNumbers()
+        // GET: RoomNumbers
+        public async Task<ActionResult> Index()
         {
-            return db.RoomNumbers;
+            return View(await db.RoomNumbers.ToListAsync());
         }
 
-        // GET: api/RoomNumbers/5
-        [ResponseType(typeof(RoomNumber))]
-        public async Task<IHttpActionResult> GetRoomNumber(int id)
+        // GET: RoomNumbers/Details/5
+        public async Task<ActionResult> Details(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             RoomNumber roomNumber = await db.RoomNumbers.FindAsync(id);
             if (roomNumber == null)
             {
-                return NotFound();
+                return HttpNotFound();
             }
-
-            return Ok(roomNumber);
+            return View(roomNumber);
         }
 
-        // PUT: api/RoomNumbers/5
-        [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutRoomNumber(int id, RoomNumber roomNumber)
+        // GET: RoomNumbers/Create
+        public ActionResult Create()
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            return View();
+        }
 
-            if (id != roomNumber.roomId)
+        // POST: RoomNumbers/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create([Bind(Include = "roomId,King,Queen,IsCityView,IsRiverView,IsSuite")] RoomNumber roomNumber)
+        {
+            if (ModelState.IsValid)
             {
-                return BadRequest();
-            }
-
-            db.Entry(roomNumber).State = EntityState.Modified;
-
-            try
-            {
+                db.RoomNumbers.Add(roomNumber);
                 await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!RoomNumberExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToAction("Index");
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return View(roomNumber);
         }
 
-        // POST: api/RoomNumbers
-        [ResponseType(typeof(RoomNumber))]
-        public async Task<IHttpActionResult> PostRoomNumber(RoomNumber roomNumber)
+        // GET: RoomNumbers/Edit/5
+        public async Task<ActionResult> Edit(int? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return BadRequest(ModelState);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            db.RoomNumbers.Add(roomNumber);
-            await db.SaveChangesAsync();
-
-            return CreatedAtRoute("DefaultApi", new { id = roomNumber.roomId }, roomNumber);
-        }
-
-        // DELETE: api/RoomNumbers/5
-        [ResponseType(typeof(RoomNumber))]
-        public async Task<IHttpActionResult> DeleteRoomNumber(int id)
-        {
             RoomNumber roomNumber = await db.RoomNumbers.FindAsync(id);
             if (roomNumber == null)
             {
-                return NotFound();
+                return HttpNotFound();
             }
+            return View(roomNumber);
+        }
 
+        // POST: RoomNumbers/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(Include = "roomId,King,Queen,IsCityView,IsRiverView,IsSuite")] RoomNumber roomNumber)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(roomNumber).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(roomNumber);
+        }
+
+        // GET: RoomNumbers/Delete/5
+        public async Task<ActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            RoomNumber roomNumber = await db.RoomNumbers.FindAsync(id);
+            if (roomNumber == null)
+            {
+                return HttpNotFound();
+            }
+            return View(roomNumber);
+        }
+
+        // POST: RoomNumbers/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteConfirmed(int id)
+        {
+            RoomNumber roomNumber = await db.RoomNumbers.FindAsync(id);
             db.RoomNumbers.Remove(roomNumber);
             await db.SaveChangesAsync();
-
-            return Ok(roomNumber);
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
@@ -109,11 +123,6 @@ namespace BookHotel.WebMVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        private bool RoomNumberExists(int id)
-        {
-            return db.RoomNumbers.Count(e => e.roomId == id) > 0;
         }
     }
 }

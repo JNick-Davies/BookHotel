@@ -82,7 +82,7 @@ namespace BookHotel.WebMVC.Controllers
 
             if (model.ReservationId != id)
             {
-                ModelState.AddModelError("", "Id Mismatch");
+                ModelState.AddModelError("", "Reservation Mismatch");
                 return View(model);
             }
 

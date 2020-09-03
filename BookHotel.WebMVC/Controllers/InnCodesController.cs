@@ -2,119 +2,118 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Description;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
 using BookHotel.Data;
 
 namespace BookHotel.WebMVC.Controllers
 {
-    public class InnCodesController : ApiController
+    public class InnCodesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/InnCodes
-        public IQueryable<InnCode> GetInncodes()
+        // GET: InnCodes
+        public async Task<ActionResult> Index()
         {
-            return db.Inncodes;
+            return View(await db.Inncodes.ToListAsync());
         }
 
-        // GET: api/InnCodes/5
-        [ResponseType(typeof(InnCode))]
-        public async Task<IHttpActionResult> GetInnCode(string id)
+        // GET: InnCodes/Details/5
+        public async Task<ActionResult> Details(string id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             InnCode innCode = await db.Inncodes.FindAsync(id);
             if (innCode == null)
             {
-                return NotFound();
+                return HttpNotFound();
             }
-
-            return Ok(innCode);
+            return View(innCode);
         }
 
-        // PUT: api/InnCodes/5
-        [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutInnCode(string id, InnCode innCode)
+        // GET: InnCodes/Create
+        public ActionResult Create()
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            return View();
+        }
 
-            if (id != innCode.HotelInnCode)
+        // POST: InnCodes/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create([Bind(Include = "HotelInnCode,HotelName,HotelAddress,HotelPhoneNumber,HasSpa,HasGolfCourse,HasRooftopBar,NumberOfStars")] InnCode innCode)
+        {
+            if (ModelState.IsValid)
             {
-                return BadRequest();
-            }
-
-            db.Entry(innCode).State = EntityState.Modified;
-
-            try
-            {
+                db.Inncodes.Add(innCode);
                 await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!InnCodeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToAction("Index");
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return View(innCode);
         }
 
-        // POST: api/InnCodes
-        [ResponseType(typeof(InnCode))]
-        public async Task<IHttpActionResult> PostInnCode(InnCode innCode)
+        // GET: InnCodes/Edit/5
+        public async Task<ActionResult> Edit(string id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return BadRequest(ModelState);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            db.Inncodes.Add(innCode);
-
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (InnCodeExists(innCode.HotelInnCode))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtRoute("DefaultApi", new { id = innCode.HotelInnCode }, innCode);
-        }
-
-        // DELETE: api/InnCodes/5
-        [ResponseType(typeof(InnCode))]
-        public async Task<IHttpActionResult> DeleteInnCode(string id)
-        {
             InnCode innCode = await db.Inncodes.FindAsync(id);
             if (innCode == null)
             {
-                return NotFound();
+                return HttpNotFound();
             }
+            return View(innCode);
+        }
 
+        // POST: InnCodes/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(Include = "HotelInnCode,HotelName,HotelAddress,HotelPhoneNumber,HasSpa,HasGolfCourse,HasRooftopBar,NumberOfStars")] InnCode innCode)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(innCode).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(innCode);
+        }
+
+        // GET: InnCodes/Delete/5
+        public async Task<ActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            InnCode innCode = await db.Inncodes.FindAsync(id);
+            if (innCode == null)
+            {
+                return HttpNotFound();
+            }
+            return View(innCode);
+        }
+
+        // POST: InnCodes/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteConfirmed(string id)
+        {
+            InnCode innCode = await db.Inncodes.FindAsync(id);
             db.Inncodes.Remove(innCode);
             await db.SaveChangesAsync();
-
-            return Ok(innCode);
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
@@ -124,11 +123,6 @@ namespace BookHotel.WebMVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        private bool InnCodeExists(string id)
-        {
-            return db.Inncodes.Count(e => e.HotelInnCode == id) > 0;
         }
     }
 }

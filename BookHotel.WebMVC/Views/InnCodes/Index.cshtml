@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BookHotel.Data.InnCode>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasSpa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasGolfCourse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasRooftopBar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfStars)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasSpa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasGolfCourse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasRooftopBar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfStars)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HotelInnCode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HotelInnCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HotelInnCode })
+        </td>
+    </tr>
+}
+
+</table>
