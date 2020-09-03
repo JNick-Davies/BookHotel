@@ -44,7 +44,7 @@ namespace BookHotel.Services
             }
         }
 
-        public IEnumerable<ReservationListItem> GetReservations()
+        public IEnumerable<ReservationListItem> GetReservationById()
         {
             using (var ctx = new ApplicationDbContext())
             {

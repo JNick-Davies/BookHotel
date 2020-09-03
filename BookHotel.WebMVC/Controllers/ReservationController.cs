@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace BookHotel.WebMVC.Controllers
 {
     public class ReservationController : Controller
@@ -17,12 +18,13 @@ namespace BookHotel.WebMVC.Controllers
         {
             var StaffIdLogin = Guid.Parse(User.Identity.GetUserId());
             var service = new ReservationService(StaffIdLogin);
-            var model = service.GetReservations();
+            var model = service.GetReservationById();
 
             return View(model);
         }
 
         [HttpPost]
+        [Route("Reservation/Create")]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ReservationCreate model)
         {
@@ -48,5 +50,15 @@ namespace BookHotel.WebMVC.Controllers
             return service;
         }
 
-    }
+        /*[HttpGet]
+        [Route("Reservation/{ReservationId}")]
+        public IHttpActionResult GetReservation(int ReservationId)
+        {
+            ReservationService reservationService = CreateReservationService();
+            var currentReservation = reservationService.GetReservationById(ReservationId);
+            return View(currentReservation);
+        }*/
+
+
+    } 
 }

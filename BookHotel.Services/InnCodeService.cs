@@ -1,6 +1,7 @@
 ﻿using BookHotel.Data;
 using BookHotel.Models;
 using BookHotel.Models.InnCode;
+using BookHotel.Models.InnCodeTools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,15 +63,14 @@ namespace BookHotel.Services
             }
         }
 
-        /*public bool EditInnCode(InnCodeEdit model)
+        public bool EditInnCode(InnCodeEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Inncodes
-                        .Single(e => e.HotelInnCode == model.InnCode);
-                entity.HotelInnCode =model.HotelInnCode;
+                        .Single(e => e.HotelInnCode == model.HotelInnCode);
                 entity.HotelName = model.HotelName;
                 entity.HotelAddress = model.HotelAddress;
                 entity.HotelPhoneNumber = model.HotelPhoneNumber;
@@ -83,17 +83,17 @@ namespace BookHotel.Services
             }
         }
 
-        public bool DeleteInnCode(int id)
+        public bool DeleteInnCode(string HotelInnCode)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Inncodes
-                        .Single(e => e.HotelInnCode == id);
-                ctx..Inncodes.Remove(entity);
+                        .Single(e => e.HotelInnCode == HotelInnCode);
+                ctx.Inncodes.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
-        }*/
+        }
     }
 }

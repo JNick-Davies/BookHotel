@@ -115,3 +115,9 @@ C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\o
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\obj\Debug\BookHotel.WebMVC.csproj.CopyComplete
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\obj\Debug\BookHotel.WebMVC.dll
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\obj\Debug\BookHotel.WebMVC.pdb
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\bin\System.Net.Http.Formatting.dll
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\bin\System.Web.Http.dll
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\bin\System.Web.Http.WebHost.dll
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\bin\System.Net.Http.Formatting.xml
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\bin\System.Web.Http.xml
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.WebMVC\bin\System.Web.Http.WebHost.xml

@@ -58,6 +58,7 @@
     <Compile Include="ApplicationLoginUser.cs\ApplicationLoginUserDetail.cs" />
     <Compile Include="ApplicationLoginUser.cs\ApplicationLoginUserEdit.cs" />
     <Compile Include="InnCodeTools\InnCodeCreate.cs" />
+    <Compile Include="InnCodeTools\InnCodeEdit.cs" />
     <Compile Include="InnCodeTools\InnCodeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationCreate.cs" />
