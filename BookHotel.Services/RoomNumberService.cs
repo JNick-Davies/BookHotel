@@ -81,7 +81,7 @@ namespace BookHotel.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        /*public bool DeleteRoomNumber(int ReservationId)
+        public bool DeleteRoomNumber(int roomId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -92,6 +92,6 @@ namespace BookHotel.Services
                 ctx.RoomNumbers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
-        }*/
+        }
     }
 }

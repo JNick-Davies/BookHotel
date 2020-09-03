@@ -18,7 +18,7 @@ namespace BookHotel.Services
             _userId = userId;
         }
 
-                public bool CreateApplicationLoginUser(ApplicationLoginUserCreate model)
+        public bool CreateApplicationLoginUser(ApplicationLoginUserCreate model)
         {
             var entity = new ApplicationLoginUser()
             {
@@ -31,6 +31,33 @@ namespace BookHotel.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.ApplicationLoginUsers.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool EditApplicationLoginUser(ApplicationLoginUserEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                            ctx
+                           .ApplicationLoginUsers
+                           .Single(e => e.StaffIdLogin == model.StaffIdLogin);
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.UserHotelInnCode = model.UserHotelInnCode;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteApplicationLoginUser(Guid StaffIdLogin)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .ApplicationLoginUsers
+                        .Single(e => e.StaffIdLogin == StaffIdLogin);
+                ctx.ApplicationLoginUsers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }

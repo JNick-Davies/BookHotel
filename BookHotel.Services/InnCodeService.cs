@@ -19,7 +19,7 @@ namespace BookHotel.Services
             _userid = userId;
         }
 
-        public bool CreateCrime(InnCodeCreate model)
+        public bool CreateInnCode(InnCodeCreate model)
         {
             var entity =
                 new InnCode()
