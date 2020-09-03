@@ -67,5 +67,7 @@ namespace BookHotel.Data
                 HasKey(iur => iur.UserId);
             }
         }
+
+        
     }
 }

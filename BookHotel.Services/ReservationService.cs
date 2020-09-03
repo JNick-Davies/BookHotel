@@ -28,13 +28,9 @@ namespace BookHotel.Services
                     ConfirmationNumber = model.ConfirmationNumber,
                     InnCode = model.InnCode,
                     Rate = model.Rate,
-                    //UserID = model.UserID, //_user!~!
                     ArrivialDate = model.ArrivalDate,
                     NumberOfNights = model.NumberOfNights,
                     NumberOfRooms = model.NumberOfRooms,
-                    //Title = model.Title,
-                    //Content = model.Content,
-                    //CreatedUtc = DateTimeOffset.Now
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -59,7 +55,7 @@ namespace BookHotel.Services
                                     ReservationId = e.ReservationId,
                                     ConfirmationNumber = e.ConfirmationNumber,
                                     InnCode = e.InnCode,
-                                    //Rate = e.Rate, not in list atm
+                                    Rate = e.Rate, 
                                     ArrivialDate = e.ArrivialDate,
                                     NumberOfNights = e.NumberOfNights,
                                     //NumberOfRooms = e.NumberOfRooms, not in list atm 

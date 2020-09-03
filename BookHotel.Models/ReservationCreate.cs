@@ -15,8 +15,7 @@ namespace BookHotel.Models
         public Guid StaffIdLogin { get; set; }
 
         [Required]
-        [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]
-        [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
+        [Range(5,10, ErrorMessage = "There are too many characters in this field.")]
         public int ConfirmationNumber { get; set; }//range and min max length 
 
         [Required]

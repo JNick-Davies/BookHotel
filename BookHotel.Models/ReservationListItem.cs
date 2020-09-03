@@ -19,5 +19,6 @@ namespace BookHotel.Models
         public DateTime ArrivialDate { get; set; }
         [Display(Name = "Number of nights")]
         public int NumberOfNights { get; set; }
+        public decimal Rate { get; set; }
     }
 }

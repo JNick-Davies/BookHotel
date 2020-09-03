@@ -10,10 +10,18 @@ using System.Web.Mvc;
 
 namespace BookHotel.WebMVC.Controllers
 {
+    [Authorize]
     public class ReservationController : Controller
     {
+        private ReservationService CreateReservationService()
+        {
+            var StaffIdLogin = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReservationService(StaffIdLogin);
+            return service;
+        }
+
         // GET: Reservation
-        [Authorize]
+
         public ActionResult Index()
         {
             var StaffIdLogin = Guid.Parse(User.Identity.GetUserId());
@@ -21,6 +29,11 @@ namespace BookHotel.WebMVC.Controllers
             var model = service.GetReservationById();
 
             return View(model);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -43,16 +56,11 @@ namespace BookHotel.WebMVC.Controllers
             return View(model);
         }
 
-        private ReservationService CreateReservationService()
-        {
-            var StaffIdLogin = Guid.Parse(User.Identity.GetUserId());
-            var service = new ReservationService(StaffIdLogin);
-            return service;
-        }
+        
 
         /*[HttpGet]
         [Route("Reservation/{ReservationId}")]
-        public IHttpActionResult GetReservation(int ReservationId)
+        public ActionResult GetReservation(int ReservationId)
         {
             ReservationService reservationService = CreateReservationService();
             var currentReservation = reservationService.GetReservationById(ReservationId);
