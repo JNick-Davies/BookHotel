@@ -56,7 +56,71 @@ namespace BookHotel.WebMVC.Controllers
             return View(model);
         }
 
-        
+        public ActionResult Edit(int id)
+        {
+            var service = CreateReservationService();
+            var detail = service.GetReservationById(id);
+            var model =
+                new ReservationEdit
+                {
+                    Rate = detail.Rate,
+                    ArrivialDate = detail.ArrivalDate,
+                    NumberOfNights = detail.NumberOfNights,
+                    NumberOfRooms = detail.NumberOfRooms,
+                    GuestFirstName = detail.GuestFirstName,
+                    GuestlastName = detail.GuestlastName,
+                    GuestEmail = detail.GuestEmail,
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ReservationEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.ReservationId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateReservationService();
+
+            if (service.UpdateReservation(model))
+            {
+                TempData["SaveResult"] = "Your Reservation was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your Reservation could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateReservationService();
+            var model = svc.GetReservationById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteReservation(int id)
+        {
+            var service = CreateReservationService();
+
+            service.DeleteReservation(id);
+
+            TempData["SaveResult"] = "Your Reservation was deleted";
+
+            return RedirectToAction("Index");
+        }
+
 
         /*[HttpGet]
         [Route("Reservation/{ReservationId}")]

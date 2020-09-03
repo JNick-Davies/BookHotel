@@ -11,11 +11,11 @@ namespace BookHotel.Models
     {
         [Key]
         public int ReservationId { get; set; }
-        [Required]
-        public Guid StaffIdLogin { get; set; }
+
+        //public Guid StaffIdLogin { get; set; }
 
         [Required]
-        [Range(5,10, ErrorMessage = "There are too many characters in this field.")]
+        [Range(1, 99999999, ErrorMessage = "The confirmation Number should be between one and eight digits long.")]
         public int ConfirmationNumber { get; set; }//range and min max length 
 
         [Required]
@@ -36,7 +36,7 @@ namespace BookHotel.Models
         public DateTime ArrivalDate { get; set; }
 
         [Required]
-        [Range(0,13, ErrorMessage = "For stays 14 nights or longer please contact the hotel sale's team directly for a long term stay rate.")]
+        [Range(0, 13, ErrorMessage = "For stays 14 nights or longer please contact the hotel sale's team directly for a long term stay rate.")]
         public int NumberOfNights { get; set; }
 
         [Required]

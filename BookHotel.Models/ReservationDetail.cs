@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookHotel.Models
 {
-    class ReservationDetail
+    public class ReservationDetail
     {
   
         public int ReservationId { get; set; }

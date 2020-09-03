@@ -18,12 +18,36 @@ namespace BookHotel.Services
             _userId = userId;
         }
 
+        public ReservationDetail GetReservationById(int ReservationId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Reservations
+                        .Single(e => e.ReservationId == ReservationId);
+                return
+                    new ReservationDetail
+                    {
+                        ConfirmationNumber = entity.ConfirmationNumber,
+                        InnCode = entity.InnCode,
+                        Rate = entity.Rate,
+                        ArrivalDate = entity.ArrivialDate,
+                        NumberOfNights = entity.NumberOfNights,
+                        NumberOfRooms = entity.NumberOfRooms,
+                        StaffIdLogin = entity.StaffIdLogin,
+                        GuestFirstName = entity.GuestFirstName, 
+                        GuestlastName = entity.GuestlastName, 
+                        GuestEmail = entity.GuestEmail,
+                    };
+            }
+        }
+
         public bool CreateReservation(ReservationCreate model)
         {
             var entity =
                 new Reservation()
                 {
-                    StaffIdLogin = _userId,
                     ReservationId = model.ReservationId,
                     ConfirmationNumber = model.ConfirmationNumber,
                     InnCode = model.InnCode,
