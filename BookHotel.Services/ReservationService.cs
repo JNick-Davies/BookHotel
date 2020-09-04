@@ -64,14 +64,14 @@ namespace BookHotel.Services
             }
         }
 
-        public IEnumerable<ReservationListItem> GetReservationById()
+        public IEnumerable<ReservationListItem> GetReservationList()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Reservations
-                        .Where(e => e.StaffIdLogin == _userId)
+                        
                         .Select(
                             e =>
                                 new ReservationListItem

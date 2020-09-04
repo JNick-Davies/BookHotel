@@ -85,6 +85,14 @@
     <Compile Include="Migrations\202009041636524_TestingDataAnnotations.Designer.cs">
       <DependentUpon>202009041636524_TestingDataAnnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009041831215_TestingSeedForRES3.cs" />
+    <Compile Include="Migrations\202009041831215_TestingSeedForRES3.Designer.cs">
+      <DependentUpon>202009041831215_TestingSeedForRES3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009041834091_TestingSeedForRES4.cs" />
+    <Compile Include="Migrations\202009041834091_TestingSeedForRES4.Designer.cs">
+      <DependentUpon>202009041834091_TestingSeedForRES4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NumOfRoomsToRoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009041636524_TestingDataAnnotations.resx">
       <DependentUpon>202009041636524_TestingDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009041831215_TestingSeedForRES3.resx">
+      <DependentUpon>202009041831215_TestingSeedForRES3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009041834091_TestingSeedForRES4.resx">
+      <DependentUpon>202009041834091_TestingSeedForRES4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

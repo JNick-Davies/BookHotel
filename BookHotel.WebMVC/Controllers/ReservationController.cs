@@ -26,7 +26,7 @@ namespace BookHotel.WebMVC.Controllers
         {
             var StaffIdLogin = Guid.Parse(User.Identity.GetUserId());
             var service = new ReservationService(StaffIdLogin);
-            var model = service.GetReservationById();
+            var model = service.GetReservationList();
 
             return View(model);
         }
