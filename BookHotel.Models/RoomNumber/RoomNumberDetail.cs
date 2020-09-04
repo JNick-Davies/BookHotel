@@ -9,9 +9,8 @@ namespace BookHotel.Models.RoomNumber
 {
     public class RoomNumberDetail
     {
-        public int roomId { get; set; }
         [Display(Name = "Room number")]
-        public int RoomNumberRecord { get; set; }
+        public int roomId { get; set; }
         public bool King { get; set; }
         public bool Queen { get; set; }
         public bool IsCityView { get; set; }

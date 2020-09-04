@@ -12,8 +12,8 @@ namespace BookHotel.Data
     public class RoomNumber
     {
         [Key]
+        [Display(Name = "Room Number")]
         public int roomId { get; set; } //room number?
-        public int RoomNumberRecord { get; set; }
         public bool King { get; set; }
         public bool Queen { get; set; }
         public bool IsCityView { get; set; }

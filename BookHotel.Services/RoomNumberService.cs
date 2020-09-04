@@ -26,7 +26,6 @@ namespace BookHotel.Services
                 new RoomNumber()
                 {
                     roomId = model.roomId,
-                    RoomNumberRecord = model.RoomNumberRecord,
                     King = model.King,
                     Queen = model.Queen,
                     IsCityView = model.IsCityView,
@@ -53,7 +52,6 @@ namespace BookHotel.Services
                                 new RoomNumberList
                                 {
                                     roomId = e.roomId,
-                                    RoomNumberRecord = e.RoomNumberRecord,
                                     King = e.King,
                                     Queen = e.Queen,
                                     IsCityView = e.IsCityView,
@@ -65,7 +63,7 @@ namespace BookHotel.Services
             }
         }
 
-        
+
         public bool UpdateRoomNumber(RoomNumberEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -75,7 +73,6 @@ namespace BookHotel.Services
                         .RoomNumbers
                         .Single(e => e.roomId == model.roomId);
                 entity.roomId = model.roomId;
-                entity.RoomNumberRecord = model.RoomNumberRecord;
                 entity.King = model.King;
                 entity.Queen = model.Queen;
                 entity.IsCityView = model.IsCityView;
@@ -91,7 +88,7 @@ namespace BookHotel.Services
                 var entity =
                         ctx
                             .RoomNumbers
-                            .Single(e => e.roomId == roomId );
+                            .Single(e => e.roomId == roomId);
                 ctx.RoomNumbers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

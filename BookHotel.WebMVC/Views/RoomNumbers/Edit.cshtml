@@ -17,14 +17,6 @@
         @Html.HiddenFor(model => model.roomId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RoomNumberRecord, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RoomNumberRecord, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RoomNumberRecord, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.King, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
