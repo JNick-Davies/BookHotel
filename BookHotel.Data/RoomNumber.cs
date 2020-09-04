@@ -16,8 +16,12 @@ namespace BookHotel.Data
         public int roomId { get; set; } //room number?
         public bool King { get; set; }
         public bool Queen { get; set; }
+
+        [Display(Name = "City View")]
         public bool IsCityView { get; set; }
+        [Display(Name = "River View")]
         public bool IsRiverView { get; set; }
+        [Display(Name = "Suite")]
         public bool IsSuite { get; set; }
         public virtual ICollection<NumOfRoomsToRoomType> NumOfRoomsToRoomTypes { get; set; } //= new List<NumOfRoomsToRoomTypes>(); 
     }

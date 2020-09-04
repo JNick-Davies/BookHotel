@@ -28,7 +28,8 @@
                 new InnCode { HotelInnCode = "INDCD", HotelName = "Carmel Delights Resort and Spa", HotelAddress = "479 Carmel Drive", HotelPhoneNumber = 5555678, HasSpa = true, HasGolfCourse = true, HasRooftopBar = true, NumberOfStars = 5 },
                 new InnCode { HotelInnCode = "INDAP", HotelName = "Indianapolis Inn at the Airport", HotelAddress = "324 Wier Drive", HotelPhoneNumber = 5552345, HasSpa = false, HasGolfCourse = false, HasRooftopBar = false, NumberOfStars = 2 },
                 new InnCode { HotelInnCode = "INDFQ", HotelName = "Fishers' Quarters", HotelAddress = "871 116th Street", HotelPhoneNumber = 5550782, HasSpa = true, HasGolfCourse = false, HasRooftopBar = true, NumberOfStars = 4 },
-                new InnCode { HotelInnCode = "INDZS", HotelName = "Zionsville Manor at Cemetery Creek", HotelAddress = "800 Cemetery Trace", HotelPhoneNumber = 5556549, HasSpa = true, HasGolfCourse = true, HasRooftopBar = true, NumberOfStars = 5 }
+                new InnCode { HotelInnCode = "INDZS", HotelName = "Zionsville Manor at Cemetery Creek", HotelAddress = "800 Cemetery Trace", HotelPhoneNumber = 5556549, HasSpa = true, HasGolfCourse = true, HasRooftopBar = true, NumberOfStars = 5 },
+                new InnCode {  HotelInnCode = "INDSW", HotelName = "Gasoline Alley Inn at IMS", HotelAddress = "500 Gas Alley", HotelPhoneNumber = 5551598, HasSpa = false, HasGolfCourse = true, HasRooftopBar = false, NumberOfStars = 3 }
                         );
 
             /*context.RoomNumbers.AddOrUpdate(x => x.roomId,
