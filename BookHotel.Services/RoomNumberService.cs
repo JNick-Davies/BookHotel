@@ -26,6 +26,7 @@ namespace BookHotel.Services
                 new RoomNumber()
                 {
                     roomId = model.roomId,
+                    RoomNumberRecord = model.RoomNumberRecord,
                     King = model.King,
                     Queen = model.Queen,
                     IsCityView = model.IsCityView,
@@ -52,6 +53,7 @@ namespace BookHotel.Services
                                 new RoomNumberList
                                 {
                                     roomId = e.roomId,
+                                    RoomNumberRecord = e.RoomNumberRecord,
                                     King = e.King,
                                     Queen = e.Queen,
                                     IsCityView = e.IsCityView,
@@ -73,6 +75,7 @@ namespace BookHotel.Services
                         .RoomNumbers
                         .Single(e => e.roomId == model.roomId);
                 entity.roomId = model.roomId;
+                entity.RoomNumberRecord = model.RoomNumberRecord;
                 entity.King = model.King;
                 entity.Queen = model.Queen;
                 entity.IsCityView = model.IsCityView;

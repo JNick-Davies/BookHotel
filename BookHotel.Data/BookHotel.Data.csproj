@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202009041341353_TestingSeedPhNumber.Designer.cs">
       <DependentUpon>202009041341353_TestingSeedPhNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009041353362_RoomNumberPropChanged.cs" />
+    <Compile Include="Migrations\202009041353362_RoomNumberPropChanged.Designer.cs">
+      <DependentUpon>202009041353362_RoomNumberPropChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NumOfRoomsToRoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009041341353_TestingSeedPhNumber.resx">
       <DependentUpon>202009041341353_TestingSeedPhNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009041353362_RoomNumberPropChanged.resx">
+      <DependentUpon>202009041353362_RoomNumberPropChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

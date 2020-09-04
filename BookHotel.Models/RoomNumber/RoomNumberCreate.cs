@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,9 @@ namespace BookHotel.Models.RoomNumber
 {
     public class RoomNumberCreate
     {
-        public int roomId { get; set; } 
+        public int roomId { get; set; }
+        [Display(Name = "Room number")]
+        public int RoomNumberRecord { get; set; }
         public bool King { get; set; }
         public bool Queen { get; set; }
         public bool IsCityView { get; set; }

@@ -47,7 +47,7 @@ namespace BookHotel.WebMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "roomId,King,Queen,IsCityView,IsRiverView,IsSuite")] RoomNumber roomNumber)
+        public async Task<ActionResult> Create([Bind(Include = "roomId,RoomNumberRecord,King,Queen,IsCityView,IsRiverView,IsSuite")] RoomNumber roomNumber)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace BookHotel.WebMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "roomId,King,Queen,IsCityView,IsRiverView,IsSuite")] RoomNumber roomNumber)
+        public async Task<ActionResult> Edit([Bind(Include = "roomId,RoomNumberRecord,King,Queen,IsCityView,IsRiverView,IsSuite")] RoomNumber roomNumber)
         {
             if (ModelState.IsValid)
             {
