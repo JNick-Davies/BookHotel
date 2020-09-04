@@ -97,7 +97,7 @@ namespace BookHotel.Services
                 var entity =
                     ctx
                         .Reservations
-                        .Single(e => e.ReservationId == model.ReservationId && e.StaffIdLogin == _userId);
+                        .Single(e => e.ReservationId == model.ReservationId);
                 entity.Rate = model.Rate;
                 entity.ArrivialDate = model.ArrivialDate;
                 entity.NumberOfNights = model.NumberOfNights;
@@ -115,7 +115,7 @@ namespace BookHotel.Services
                 var entity =
                         ctx
                             .Reservations
-                            .Single(e => e.ReservationId == ReservationId && e.StaffIdLogin == _userId);
+                            .Single(e => e.ReservationId == ReservationId);
                 ctx.Reservations.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

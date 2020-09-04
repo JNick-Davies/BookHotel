@@ -98,6 +98,14 @@ namespace BookHotel.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateReservationService();
+            var model = svc.GetReservationById(id);
+
+            return View(model);
+        }
+
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
@@ -132,5 +140,5 @@ namespace BookHotel.WebMVC.Controllers
         }*/
 
 
-    } 
+    }
 }
