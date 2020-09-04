@@ -17,3 +17,5 @@ C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.csproj.CopyComplete
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.dll
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.pdb
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.TestingSeed.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.TestingSeedPhNumber.resources

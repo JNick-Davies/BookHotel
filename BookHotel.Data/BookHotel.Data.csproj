@@ -69,6 +69,14 @@
     <Compile Include="Migrations\202009031942181_ChangingGuidReq.Designer.cs">
       <DependentUpon>202009031942181_ChangingGuidReq.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009041339310_TestingSeed.cs" />
+    <Compile Include="Migrations\202009041339310_TestingSeed.Designer.cs">
+      <DependentUpon>202009041339310_TestingSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009041341353_TestingSeedPhNumber.cs" />
+    <Compile Include="Migrations\202009041341353_TestingSeedPhNumber.Designer.cs">
+      <DependentUpon>202009041341353_TestingSeedPhNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NumOfRoomsToRoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +96,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009031942181_ChangingGuidReq.resx">
       <DependentUpon>202009031942181_ChangingGuidReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009041339310_TestingSeed.resx">
+      <DependentUpon>202009041339310_TestingSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009041341353_TestingSeedPhNumber.resx">
+      <DependentUpon>202009041341353_TestingSeedPhNumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
