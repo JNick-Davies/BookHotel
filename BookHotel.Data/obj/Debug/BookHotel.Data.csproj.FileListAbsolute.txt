@@ -24,3 +24,7 @@ C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.TestingDataAnnotations.resources
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.TestingSeedForRES3.resources
 C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.TestingSeedForRES4.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.UpdateSeedInfo.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.RoomlayerChanged.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.TestingRoomNumberFunc.resources
+C:\Users\Nick\Desktop\ElevenFiftyProjects\Red_Badge\BookHotel\BookHotel.Data\obj\Debug\BookHotel.Data.Migrations.TestingRoomNumberFuncSeed1.resources

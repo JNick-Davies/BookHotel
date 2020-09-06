@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BookHotel.Data;
+using System.Linq.Expressions;
 
 namespace BookHotel.WebMVC.Controllers
 {
@@ -49,6 +50,7 @@ namespace BookHotel.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "roomId,King,Queen,IsCityView,IsRiverView,IsSuite")] RoomNumber roomNumber)
         {
+
             if (ModelState.IsValid)
             {
                 db.RoomNumbers.Add(roomNumber);

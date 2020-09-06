@@ -13,6 +13,8 @@ namespace BookHotel.Data
     {
         [Key]
         [Display(Name = "Room Number")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Required]
         public int roomId { get; set; } //room number?
         public bool King { get; set; }
         public bool Queen { get; set; }

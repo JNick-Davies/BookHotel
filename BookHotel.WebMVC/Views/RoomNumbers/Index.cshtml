@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.roomId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.King)
         </th>
         <th>
@@ -30,28 +33,31 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.King)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Queen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsCityView)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsRiverView)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsSuite)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.roomId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.roomId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.roomId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.roomId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.King)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Queen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsCityView)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsRiverView)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsSuite)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.roomId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.roomId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.roomId })
+    </td>
+</tr>
 }
 
 </table>

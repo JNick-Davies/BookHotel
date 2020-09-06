@@ -12,8 +12,10 @@
 
     internal sealed class Configuration : DbMigrationsConfiguration<BookHotel.Data.ApplicationDbContext>
     {
-        
+
         private Guid PatchGuid = Guid.NewGuid();
+
+        private Random RoomPatch = new Random();
 
         public Configuration()
         {
@@ -40,18 +42,22 @@
                 );
 
             context.Reservations.AddOrUpdate(x => x.ReservationId,
-                new Reservation { ConfirmationNumber = 12345678, InnCode = "INDMS", Rate = 149.99m, ArrivialDate = new DateTime(2020, 10, 02), NumberOfNights = 2, NumberOfRooms = 1, GuestFirstName = "Ryan", GuestlastName = "Sanchez", StaffIdLogin = PatchGuid},
-                new Reservation { ConfirmationNumber = 12345679, InnCode = "INDFQ", Rate = 179.99m, ArrivialDate = new DateTime(2020, 10,09), NumberOfNights = 2, NumberOfRooms = 2, GuestFirstName = "Andrea", GuestlastName = "McKenzie", StaffIdLogin = PatchGuid }
-
-                /*context.RoomNumbers.AddOrUpdate(x => x.roomId,
-                new RoomNumber { roomId = 500, King = true, Queen = false, IsCityView = true, IsRiverView = true, IsSuite = true },
-                new RoomNumber { roomId = 200, King = true, Queen = false, IsCityView = true, IsRiverView = false, IsSuite = false },
-                new RoomNumber { roomId = 201, King = false, Queen = true, IsCityView = false, IsRiverView = true, IsSuite = false },
-                new RoomNumber { roomId = 202, King = false, Queen = true, IsCityView = true, IsRiverView = false, IsSuite = false },
-                new RoomNumber { roomId = 203, King = true, Queen = false, IsCityView = false, IsRiverView = true, IsSuite = false },
-                new RoomNumber { roomId = 204, King = true, Queen = false, IsCityView = true, IsRiverView = false, IsSuite = false }
-                        );*/
+                new Reservation { ConfirmationNumber = 12345678, InnCode = "INDMS", Rate = 149.99m, ArrivialDate = new DateTime(2020, 10, 02), NumberOfNights = 2, NumberOfRooms = 1, GuestFirstName = "Ryan", GuestlastName = "Sanchez", StaffIdLogin = PatchGuid },
+                new Reservation { ConfirmationNumber = 12345679, InnCode = "INDFQ", Rate = 179.99m, ArrivialDate = new DateTime(2020, 10, 09), NumberOfNights = 2, NumberOfRooms = 2, GuestFirstName = "Cristina", GuestlastName = "McKenzie", StaffIdLogin = PatchGuid },
+                new Reservation { ConfirmationNumber = 12345680, InnCode = "INDZS", Rate = 209.99m, ArrivialDate = new DateTime(2020, 10, 30), NumberOfNights = 4, NumberOfRooms = 1, GuestFirstName = "Nick", GuestlastName = "Willett", StaffIdLogin = PatchGuid }
             );
+
+            context.RoomNumbers.AddOrUpdate(x => x.roomId,
+            new RoomNumber { roomId = 500, King = true, Queen = false, IsCityView = true, IsRiverView = true, IsSuite = true },
+            new RoomNumber { roomId = 200, King = true, Queen = false, IsCityView = true, IsRiverView = false, IsSuite = false },
+            new RoomNumber { roomId = 201, King = false, Queen = true, IsCityView = false, IsRiverView = true, IsSuite = false },
+            new RoomNumber { roomId = 202, King = false, Queen = true, IsCityView = true, IsRiverView = false, IsSuite = false },
+            new RoomNumber { roomId = 203, King = true, Queen = false, IsCityView = false, IsRiverView = true, IsSuite = false },
+            new RoomNumber { roomId = 204, King = true, Queen = false, IsCityView = true, IsRiverView = false, IsSuite = false }
+                    );
         }
     }
 }
+
+
+

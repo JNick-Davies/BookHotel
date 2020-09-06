@@ -93,6 +93,22 @@
     <Compile Include="Migrations\202009041834091_TestingSeedForRES4.Designer.cs">
       <DependentUpon>202009041834091_TestingSeedForRES4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009042014360_UpdateSeedInfo.cs" />
+    <Compile Include="Migrations\202009042014360_UpdateSeedInfo.Designer.cs">
+      <DependentUpon>202009042014360_UpdateSeedInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009061333044_Room#layerChanged.cs" />
+    <Compile Include="Migrations\202009061333044_Room#layerChanged.Designer.cs">
+      <DependentUpon>202009061333044_Room#layerChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009061400115_TestingRoomNumberFunc.cs" />
+    <Compile Include="Migrations\202009061400115_TestingRoomNumberFunc.Designer.cs">
+      <DependentUpon>202009061400115_TestingRoomNumberFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009061411175_TestingRoomNumberFuncSeed1.cs" />
+    <Compile Include="Migrations\202009061411175_TestingRoomNumberFuncSeed1.Designer.cs">
+      <DependentUpon>202009061411175_TestingRoomNumberFuncSeed1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NumOfRoomsToRoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +146,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009041834091_TestingSeedForRES4.resx">
       <DependentUpon>202009041834091_TestingSeedForRES4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009042014360_UpdateSeedInfo.resx">
+      <DependentUpon>202009042014360_UpdateSeedInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009061333044_Room#layerChanged.resx">
+      <DependentUpon>202009061333044_Room#layerChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009061400115_TestingRoomNumberFunc.resx">
+      <DependentUpon>202009061400115_TestingRoomNumberFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009061411175_TestingRoomNumberFuncSeed1.resx">
+      <DependentUpon>202009061411175_TestingRoomNumberFuncSeed1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
