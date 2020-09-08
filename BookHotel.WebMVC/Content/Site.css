@@ -1,18 +1,31 @@
-﻿body {
+﻿@font-face {
+    font-family: 'AUGUSTUS';
+    src: url('../fonts/AUGUSTUS.TTF') format('truetype');
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #CEC7BF;
-    background-image: url('Assets/random-institute-FDcydLvV7Io-unsplash.jpg');
+    background-image: url('Assets/jason-leung-UMncYEfO9-U-unsplash.jpg');
     background-size: cover;
     background-position: center, center;
     background-repeat: no-repeat;
     margin: auto;
+    text-align: center;
+    font-family: 'AUGUSTUS';
 }
+
+.classname {
+    font-family: 'AUGUSTUS';
+}
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #CEC7BF;
+    border: 5px solid #B29A7A;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -29,5 +42,51 @@ textarea {
     max-width: 280px;
 }
 
+h1 {
+    font-family: 'AUGUSTUS';
+    font-style: italic;
+}
 
+.navbar {
+    font-family: 'AUGUSTUS';
+    background-color: #ABB8DA;
+    width: auto;
+    text-align: end;
+    border-bottom: 4px solid black;
+}
 
+h2 {
+    font-family: 'AUGUSTUS';
+    color: #36454F;
+    font-weight: bolder;
+}
+
+.jumbotron {
+    background-color: #94A0B0;
+    border-bottom: 6px solid black;
+}
+
+.col-md-12 {
+    background-color: #CEC7BF;
+    font-style: italic;
+    border-bottom: 6px solid black;
+}
+
+footer {
+  width:auto;
+  color: black;
+  font-style: italic;
+  font-size: 14px;
+}
+
+button {
+    border: none;
+    background: #3a7999;
+    color: #f2f2f2;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}

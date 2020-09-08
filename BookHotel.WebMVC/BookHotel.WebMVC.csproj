@@ -192,11 +192,18 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Assets\alexander-huang-WHNPtAilodU-unsplash.jpg" />
+    <Content Include="Content\Assets\bobby-allen-98xg7HEJThA-unsplash.jpg" />
+    <Content Include="Content\Assets\david-hertle-WlURpJNPJIY-unsplash.jpg" />
     <Content Include="Content\Assets\ej-k-eunirCQ_WXk-unsplash.jpg" />
+    <Content Include="Content\Assets\jason-leung-UMncYEfO9-U-unsplash.jpg" />
     <Content Include="Content\Assets\kirill-x_VOtnVJeGE-unsplash.jpg" />
     <Content Include="Content\Assets\mohamed-ajufaan-GFcWwwGNu_w-unsplash.jpg" />
+    <Content Include="Content\Assets\oleksandr-baiev-PQhq3qLebmc-unsplash.jpg" />
+    <Content Include="Content\Assets\ori-song-dSU0X6EGlpM-unsplash.jpg" />
     <Content Include="Content\Assets\random-institute-FDcydLvV7Io-unsplash.jpg" />
     <Content Include="Content\Assets\rhema-kallianpur-uocSnWMhnAs-unsplash.jpg" />
+    <Content Include="Content\Assets\rinck-content-studio-dovoV_nkJFE-unsplash.jpg" />
     <Content Include="Content\Assets\runnyrem-LfqmND-hym8-unsplash.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -208,6 +215,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\AUGUSTUS.TTF" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
