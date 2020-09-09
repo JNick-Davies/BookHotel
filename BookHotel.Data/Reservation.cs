@@ -19,6 +19,7 @@ namespace BookHotel.Data
         [Display(Name = "Hotel Inn Code")]
 
         public string InnCode { get; set; }//***FK***
+        [Display(Name = "Hotel Inn Code")]
         public virtual InnCode HotelInnCode { get; set; }
         public decimal Rate { get; set; } //range and min max length 
                                           //public Guid BookingUserId { get; set; } //user booking rooms

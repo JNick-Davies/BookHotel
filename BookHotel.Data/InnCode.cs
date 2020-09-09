@@ -13,6 +13,7 @@ namespace BookHotel.Data
     {
         [Key]
         [Required]
+        [Display(Name = "Hotel Inn Code")]
         public string HotelInnCode { get; set; }
         
         [Required]
@@ -36,7 +37,7 @@ namespace BookHotel.Data
         public bool HasGolfCourse { get; set; }
 
         [DefaultValue(false)]
-        [Display(Name = "Hotel has a roof top bar ")]
+        [Display(Name = "Hotel has a roof top bar")]
         public bool HasRooftopBar { get; set; }
 
         [Display(Name = "Number of stars")]
